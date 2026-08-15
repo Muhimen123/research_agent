@@ -30,6 +30,7 @@ jobs:
         if: ${{ steps.check.outputs.is_tag == 'true' }}
         env:
           GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
         run: |
           # Only create the release if it doesn't already exist.
           # This avoids swallowing real errors (e.g. permission failures)
